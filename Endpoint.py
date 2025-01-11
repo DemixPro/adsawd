@@ -19,7 +19,7 @@ def ClientHandle(Client, Address):
         print("Sending useless data...")
         Client.send("""
 print("All checks are passed, everything is works perfectly. (From endpoint, with love.)")
-""")
+""".encode())
     else:
         print("Unauthorized.")
 
