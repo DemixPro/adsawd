@@ -11,7 +11,7 @@ Socket.bind(("0.0.0.0", 2896))
 Socket.listen(99999)
 
 def ClientHandle(Client, Address):
-    print("Recived connection from '" + Address.split(":")[0] + "'. Authorizating...")
+    print("Recived connection from '" + Address + "'. Authorizating...")
 
     if Client.recv(1024) == base64.b64encode(ClientKey):
         Client.send(EndpointKey)
