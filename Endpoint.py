@@ -14,7 +14,7 @@ def ClientHandle(Client, Address):
     print("Recived connection from '" + str(Address) + "'. Authorizating...")
 
     if Client.recv(1024) == base64.b64encode(ClientKey):
-        Client.send(EndpointKey)
+        Client.send(base64.b64encode(EndpointKey))
 
         print("Sending useless data...")
         Client.send("""
